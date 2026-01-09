@@ -49,7 +49,7 @@
 <div class="box" id="login">
   <h2>🔐 Acceso secreto</h2>
   <p>Pon la contraseña correcta</p>
-  <p>Pista:Serie que finjiste verte para enamorar a este chico joven y guapo</p>
+  <p>Pista: Serie que finjiste verte para enamorar a este chico joven y guapo</p>
   <input type="password" id="password" placeholder="Contraseña">
   <br>
   <button onclick="comprobar()">Entrar</button>
@@ -66,7 +66,7 @@
   <p>2️⃣ ¿En qué fecha empezamos a salir? (x/x/xxxx)</p>
   <input id="p2">
 
-  <p>3️⃣ ¿Como se llama el mejor jugador de padel del mundo?</p>
+  <p>3️⃣ ¿Cual es el nombre del mejor jugador de padel del mundo?</p>
   <input id="p3">
 
   <p>4️⃣ ¿Cómo se llama mi película favorita?</p>
