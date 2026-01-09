@@ -52,6 +52,8 @@
 <!-- LOGIN -->
 <div class="box" id="login">
   <h2>🔐 Acceso secreto</h2>
+  <p>Pon la contraseña correcta</p>
+  <p><em>Pista: Serie que finjiste verte para enamorar a este chico joven y guapo</em></p>
   <input type="password" id="password" placeholder="Contraseña">
   <br>
   <button onclick="comprobar()">Entrar</button>
@@ -156,7 +158,7 @@
   }
 
   function verificarCancion() {
-    const correcta = "NOMBRE DE LA CANCION";
+    const correcta = "malaikah";
     if (respuestaCancion.value.toLowerCase().trim() === correcta.toLowerCase()) {
       cancion.style.display = "none";
       retos.style.display = "block";
