@@ -139,7 +139,7 @@ img {
 <div class="box contenido" id="acierto">
   <h2>🎉 ¡Has acertado!</h2>
   <img src="acierto.jpg">
-  <p>Tu regalo es… <strong>UNA SORPRESA INOLVIDABLE 💕</strong></p>
+  <p>Tu regalo es… <strong>RESERVA ESA FECHA, QUE NOS VAMOS A VER AL JUAN DAVILA</strong></p>
 </div>
 
 <script>
