@@ -48,7 +48,8 @@
 <!-- LOGIN -->
 <div class="box" id="login">
   <h2>🔐 Acceso secreto</h2>
-  <p>Solo alguien muy especial puede continuar 💕</p>
+  <p>Pon la contraseña correcta</p>
+  <p>Pista:Serie que finjiste verte para enamorar a este chico joven y guapo</p>
   <input type="password" id="password" placeholder="Contraseña">
   <br>
   <button onclick="comprobar()">Entrar</button>
@@ -59,19 +60,19 @@
 <div class="box contenido" id="preguntas">
   <h2>🧩 Prueba final</h2>
 
-  <p>1️⃣ ¿Dónde fue nuestra primera cita?</p>
+  <p>1️⃣ ¿Dónde fue nuestro primer beso?</p>
   <input id="p1">
 
-  <p>2️⃣ ¿En qué mes empezamos a salir?</p>
+  <p>2️⃣ ¿En qué fecha empezamos a salir? (x/x/xxxx)</p>
   <input id="p2">
 
-  <p>3️⃣ ¿Mi comida favorita?</p>
+  <p>3️⃣ ¿Como se llama el mejor jugador de padel del mundo?</p>
   <input id="p3">
 
-  <p>4️⃣ ¿Cómo te llamo a veces?</p>
+  <p>4️⃣ ¿Cómo se llama mi película favorita?</p>
   <input id="p4">
 
-  <p>5️⃣ ¿Ciudad de nuestro mejor recuerdo juntos?</p>
+  <p>5️⃣ ¿Destino de nuestro primer viaje juntos?</p>
   <input id="p5">
 
   <button onclick="verificarPreguntas()">Comprobar respuestas</button>
@@ -86,7 +87,7 @@
 </div>
 
 <script>
-  const CLAVE = "hola"; // contraseña
+  const CLAVE = "rickymorty"; 
 
   function comprobar() {
     const input = document.getElementById("password").value;
@@ -101,11 +102,11 @@
   function verificarPreguntas() {
     // RESPUESTAS CORRECTAS (en minúsculas)
     const respuestas = [
-      "cine",
-      "abril",
-      "pizza",
-      "cariño",
-      "paris"
+      "olesa de bonesvalls",
+      "27/09/2019",
+      "pablo",
+      "regreso al futuro",
+      "canarias"
     ];
 
     const inputs = [
