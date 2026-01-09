@@ -140,7 +140,7 @@
   }
 
   function verificarCancion() {
-    const correcta = "NOMBRE DE LA CANCION"; // 👈 CAMBIA ESTO
+    const correcta = "Malaikah"; // 👈 CAMBIA ESTO
     const respuesta = document.getElementById("respuestaCancion").value
       .toLowerCase()
       .trim();
