@@ -1,4 +1,3 @@
-
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -47,6 +46,11 @@
     .contenido {
       display: none;
     }
+    img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -54,7 +58,7 @@
 <!-- LOGIN -->
 <div class="box" id="login">
   <h2>🔐 Acceso secreto</h2>
-  <p>Pon la contraseña correcta TGGGGGGGGGG</p>
+  <p>Pon la contraseña correcta</p>
   <p><em>Pista: Serie que finjiste verte para enamorar a este chico joven y guapo</em></p>
   <input type="password" id="password" placeholder="Contraseña">
   <br>
@@ -65,22 +69,16 @@
 <!-- PREGUNTAS -->
 <div class="box contenido" id="preguntas">
   <h2>🧩 Primera prueba</h2>
-
   <p>1️⃣ ¿Dónde fue nuestro primer beso?</p>
   <input id="p1">
-
   <p>2️⃣ ¿En qué fecha empezamos a salir?</p>
   <input id="p2">
-
   <p>3️⃣ ¿Quién es el mejor jugador de pádel del mundo?</p>
   <input id="p3">
-
   <p>4️⃣ ¿Mi película favorita?</p>
   <input id="p4">
-
   <p>5️⃣ ¿Nuestro primer viaje juntos?</p>
   <input id="p5">
-
   <button onclick="verificarPreguntas()">Comprobar</button>
   <p class="error" id="errorPreguntas">❌ Has fallado alguna</p>
 </div>
@@ -91,7 +89,6 @@
   <audio controls>
     <source src="cancion.mp3" type="audio/mpeg">
   </audio>
-
   <p>¿Cómo se llama la canción?</p>
   <input id="respuestaCancion">
   <button onclick="verificarCancion()">Responder</button>
@@ -102,31 +99,51 @@
 <div class="box contenido" id="retos">
   <h2>✅ Última prueba</h2>
   <p>Completa TODOS los retos:</p>
-
   <div class="checkbox">
     <label><input type="checkbox" id="r1"> Darle algo de comer a tu querido novio</label>
   </div>
-
   <div class="checkbox">
     <label><input type="checkbox" id="r2"> Darle un beso (con sentimiento) a todas las personas de la sala</label>
   </div>
-
   <div class="checkbox">
     <label><input type="checkbox" id="r3"> Hacer 5 flexiones</label>
   </div>
-
   <button onclick="verificarRetos()">Hecho</button>
   <p class="error" id="errorRetos">❌ Faltan retos por cumplir</p>
 </div>
 
-<!-- FINAL -->
-<div class="box contenido" id="final">
-  <h1>🎁 ¡Lo has conseguido!</h1>
-  <p>Ahora sí… tu regalo te espera 😏💖</p>
+<!-- ELECCIÓN DEL REGALO -->
+<div class="box contenido" id="eleccion">
+  <h2>🎁 Elige tu regalo</h2>
+  <p>Solo uno es el correcto… elige sabiamente 😏</p>
+  <button onclick="fallo()">🎁 Regalo 1</button>
+  <button onclick="fallo()">🎁 Regalo 2</button>
+  <button onclick="acierto()">🎁 Regalo 3</button>
+  <button onclick="fallo()">🎁 Regalo 4</button>
+</div>
+
+<!-- RESULTADO FALLO -->
+<div class="box contenido" id="fallo">
+  <h2>❌ Casi…</h2>
+  <img src="fallo.jpg">
+  <p>Pero míranos qué guapos 💖</p>
+  <button onclick="volverIntentar()">Volver a intentar</button>
+</div>
+
+<!-- RESULTADO ACIERTO -->
+<div class="box contenido" id="acierto">
+  <h2>🎉 ¡Has acertado!</h2>
+  <img src="regalo.jpg">
+  <p>Tu regalo es… <strong>UNA SORPRESA INOLVIDABLE 💕</strong></p>
 </div>
 
 <script>
   const CLAVE = "rickymorty";
+
+  // Elementos para regalo
+  const falloDiv = document.getElementById("fallo");
+  const aciertoDiv = document.getElementById("acierto");
+  const eleccion = document.getElementById("eleccion");
 
   function comprobar() {
     if (password.value === CLAVE) {
@@ -145,16 +162,13 @@
       "regreso al futuro",
       "canarias"
     ];
-
     const inputs = [p1,p2,p3,p4,p5].map(i => i.value.toLowerCase().trim());
-
     for (let i = 0; i < respuestas.length; i++) {
       if (inputs[i] !== respuestas[i]) {
         errorPreguntas.style.display = "block";
         return;
       }
     }
-
     preguntas.style.display = "none";
     cancion.style.display = "block";
   }
@@ -172,10 +186,26 @@
   function verificarRetos() {
     if (r1.checked && r2.checked && r3.checked) {
       retos.style.display = "none";
-      final.style.display = "block";
+      eleccion.style.display = "block";
     } else {
       errorRetos.style.display = "block";
     }
+  }
+
+  // Funciones para elección del regalo
+  function fallo() {
+    eleccion.style.display = "none";
+    falloDiv.style.display = "block";
+  }
+
+  function acierto() {
+    eleccion.style.display = "none";
+    aciertoDiv.style.display = "block";
+  }
+
+  function volverIntentar() {
+    falloDiv.style.display = "none";
+    eleccion.style.display = "block";
   }
 </script>
 
