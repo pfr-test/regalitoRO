@@ -116,14 +116,14 @@
 <div class="box contenido" id="eleccion">
   <h2>🎁 Elige tu regalo</h2>
   <p>Solo uno es el correcto… elige sabiamente 😏</p>
-  <button onclick="fallo()">🎁 Regalo 1</button>
-  <button onclick="fallo()">🎁 Regalo 2</button>
- <button onclick="fallo()">🎁 Regalo 3</button>
-  <button onclick="fallo()">🎁 Regalo 4</button>
-  <button onclick="fallo()">🎁 Regalo 5</button>
-  <button onclick="fallo()">🎁 Regalo 6</button>
+  <button onclick="fallo(1)">🎁 Regalo 1</button>
+  <button onclick="fallo(2)">🎁 Regalo 2</button>
+  <button onclick="fallo(3)">🎁 Regalo 3</button>
+  <button onclick="fallo(4)">🎁 Regalo 4</button>
+  <button onclick="fallo(5)">🎁 Regalo 5</button>
+  <button onclick="fallo(6)">🎁 Regalo 6</button>
   <button onclick="acierto()">🎁 Regalo 7</button>
-  <button onclick="fallo()">🎁 Regalo 8</button>
+  <button onclick="fallo(8)">🎁 Regalo 8</button>
 </div>
 
 <!-- RESULTADO FALLOS -->
@@ -213,15 +213,15 @@
   }
 const falloDiv = document.getElementById("fallo");
 const aciertoDiv = document.getElementById("acierto");
-const eleccion = document.getElementById("eleccion");
+const eleccionDiv = document.getElementById("eleccion");
 const fotoFallo = document.getElementById("fotoFallo");
 const mensajeFallo = document.getElementById("mensajeFallo");
 
 function fallo(num) {
-  eleccion.style.display = "none";
+  eleccionDiv.style.display = "none";
   falloDiv.style.display = "block";
 
-  // Ajusta las fotos y mensajes según el botón que falló
+  // Fotos y mensajes según el botón que falló
   if (num === 1) {
     fotoFallo.src = "fallo1.jpg";
     mensajeFallo.textContent = "No es ese… pero vaya dos pivones💕";
@@ -231,23 +231,29 @@ function fallo(num) {
   } else if (num === 3) {
     fotoFallo.src = "fallo3.jpg";
     mensajeFallo.textContent = "No es ese… pero vaya dos pivones💕";
-  }
   } else if (num === 4) {
     fotoFallo.src = "fallo4.jpg";
     mensajeFallo.textContent = "No es ese… pero vaya dos pivones💕";
-  }
   } else if (num === 5) {
     fotoFallo.src = "fallo5.jpg";
     mensajeFallo.textContent = "No es ese… pero vaya dos pivones💕";
-  }
   } else if (num === 6) {
     fotoFallo.src = "fallo6.jpg";
     mensajeFallo.textContent = "No es ese… pero vaya dos pivones💕";
-  }
   } else if (num === 8) {
     fotoFallo.src = "fallo7.jpg";
     mensajeFallo.textContent = "No es ese… pero vaya dos pivones💕";
   }
+}
+
+function acierto() {
+  eleccionDiv.style.display = "none";
+  aciertoDiv.style.display = "block";
+}
+
+function volverIntentar() {
+  falloDiv.style.display = "none";
+  eleccionDiv.style.display = "block";
 }
 
 function acierto() {
