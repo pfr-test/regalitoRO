@@ -23,9 +23,10 @@
       width: 100%;
     }
     input[type="text"], input[type="password"] {
+      display: block;
       padding: 10px;
       width: 80%;
-      margin: 8px 0;
+      margin: 8px auto;
       font-size: 16px;
     }
     .checkbox {
@@ -33,10 +34,11 @@
       margin: 10px 0;
     }
     button {
+      display: block;
       padding: 10px 20px;
       font-size: 16px;
       cursor: pointer;
-      margin-top: 10px;
+      margin: 15px auto 0 auto;
     }
     .error {
       color: red;
@@ -52,7 +54,7 @@
 <!-- LOGIN -->
 <div class="box" id="login">
   <h2>🔐 Acceso secreto</h2>
-  <p>Pon la contraseña correcta</p>
+  <p>Pon la contraseña correcta TGGGGGGGGGG</p>
   <p><em>Pista: Serie que finjiste verte para enamorar a este chico joven y guapo</em></p>
   <input type="password" id="password" placeholder="Contraseña">
   <br>
