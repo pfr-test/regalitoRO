@@ -118,22 +118,26 @@
   <p>Solo uno es el correcto… elige sabiamente 😏</p>
   <button onclick="fallo()">🎁 Regalo 1</button>
   <button onclick="fallo()">🎁 Regalo 2</button>
-  <button onclick="acierto()">🎁 Regalo 3</button>
+ <button onclick="fallo()">🎁 Regalo 3</button>
   <button onclick="fallo()">🎁 Regalo 4</button>
+  <button onclick="fallo()">🎁 Regalo 5</button>
+  <button onclick="fallo()">🎁 Regalo 6</button>
+  <button onclick="acierto()">🎁 Regalo 7</button>
+  <button onclick="fallo()">🎁 Regalo 8</button>
 </div>
 
-<!-- RESULTADO FALLO -->
+<!-- RESULTADO FALLOS -->
 <div class="box contenido" id="fallo">
   <h2>❌ Casi…</h2>
-  <img src="fallo.jpg">
-  <p>Pero míranos qué guapos 💖</p>
+  <img id="fotoFallo">
+  <p id="mensajeFallo"></p>
   <button onclick="volverIntentar()">Volver a intentar</button>
 </div>
 
 <!-- RESULTADO ACIERTO -->
 <div class="box contenido" id="acierto">
   <h2>🎉 ¡Has acertado!</h2>
-  <img src="regalo.jpg">
+  <img src="acierto.jpg">
   <p>Tu regalo es… <strong>UNA SORPRESA INOLVIDABLE 💕</strong></p>
 </div>
 
@@ -207,6 +211,55 @@
     falloDiv.style.display = "none";
     eleccion.style.display = "block";
   }
+const falloDiv = document.getElementById("fallo");
+const aciertoDiv = document.getElementById("acierto");
+const eleccion = document.getElementById("eleccion");
+const fotoFallo = document.getElementById("fotoFallo");
+const mensajeFallo = document.getElementById("mensajeFallo");
+
+function fallo(num) {
+  eleccion.style.display = "none";
+  falloDiv.style.display = "block";
+
+  // Ajusta las fotos y mensajes según el botón que falló
+  if (num === 1) {
+    fotoFallo.src = "fallo1.jpg";
+    mensajeFallo.textContent = "No es ese… pero vaya dos pivones💕";
+  } else if (num === 2) {
+    fotoFallo.src = "fallo2.jpg";
+    mensajeFallo.textContent = "No es ese… pero vaya dos pivones💕";
+  } else if (num === 3) {
+    fotoFallo.src = "fallo3.jpg";
+    mensajeFallo.textContent = "No es ese… pero vaya dos pivones💕";
+  }
+  } else if (num === 4) {
+    fotoFallo.src = "fallo4.jpg";
+    mensajeFallo.textContent = "No es ese… pero vaya dos pivones💕";
+  }
+  } else if (num === 5) {
+    fotoFallo.src = "fallo5.jpg";
+    mensajeFallo.textContent = "No es ese… pero vaya dos pivones💕";
+  }
+  } else if (num === 6) {
+    fotoFallo.src = "fallo6.jpg";
+    mensajeFallo.textContent = "No es ese… pero vaya dos pivones💕";
+  }
+  } else if (num === 8) {
+    fotoFallo.src = "fallo7.jpg";
+    mensajeFallo.textContent = "No es ese… pero vaya dos pivones💕";
+  }
+}
+
+function acierto() {
+  eleccion.style.display = "none";
+  aciertoDiv.style.display = "block";
+}
+
+function volverIntentar() {
+  falloDiv.style.display = "none";
+  eleccion.style.display = "block";
+}
+
 </script>
 
 </body>
