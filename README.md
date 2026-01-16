@@ -57,7 +57,7 @@ img {
 
 <!-- LOGIN -->
 <div class="box" id="login">
-  <h2>🔐 Acceso secretRRRRRRRRRRo</h2>
+  <h2>🔐 Acceso secreto</h2>
   <p>Pon la contraseña correcta</p>
   <p><em>Pista: Serie que finjiste verte para enamorar a este chico joven y guapo</em></p>
   <input type="password" id="password" placeholder="Contraseña">
@@ -96,10 +96,10 @@ img {
 </div>
 <!-- CÓDIGO DEL AMOR -->
 <div class="box contenido" id="codigoAmor">
-  <h2>🗝️ Código del amor</h2>
+  <h2>🗝️Ordena correctamente</h2>
   <p>Ordena de MÁS ANTIGUO a MÁS RECIENTE</p>
-  <p>1️⃣ Primer viaje<br>2️⃣ Primer beso<br>3️⃣ Empezamos a salir</p>
-  <input id="codigoRespuesta" placeholder="Ej: 2-3-1">
+  <p>1️⃣ Primer spa juntos <br>2️⃣ Vamos a ver a BadBo<br>3️⃣ Primer viaje juntos <br>4️⃣ La munch y la Mar se conocen</p>
+  <input id="codigoRespuesta" placeholder="Ej: 1-2-3-4">
   <button onclick="verificarCodigo()">Comprobar</button>
   <p class="error" id="errorCodigo">❌ No es correcto</p>
 </div>
@@ -108,14 +108,17 @@ img {
 <div class="box contenido" id="vf">
   <h2>✔️ Verdadero o Falso</h2>
 
-  <p>Yo me enamoré antes que tú</p>
+  <p>Yo te pedí salir a ti (definitivamente)</p>
   <select id="vf1"><option value="">---</option><option>V</option><option>F</option></select>
 
-  <p>Nuestro primer viaje fue improvisado</p>
+  <p>Nuestro primer concierto fue Funzo y Babyloud</p>
   <select id="vf2"><option value="">---</option><option>V</option><option>F</option></select>
 
-  <p>Ese día llovía</p>
+  <p>En nuestra primera cena en tu casa tu madre hizo tortilla</p>
   <select id="vf3"><option value="">---</option><option>V</option><option>F</option></select>
+
+  <p>Nuestra primera vez que quedamos fuimos al cine</p>
+  <select id="vf4"><option value="">---</option><option>V</option><option>F</option></select>
 
   <button onclick="verificarVF()">Comprobar</button>
   <p class="error" id="errorVF">❌ Alguna no es correcta</p>
@@ -251,7 +254,7 @@ function verificarCancion() {
 
 // CÓDIGO DEL AMOR
 function verificarCodigo() {
-  if (codigoRespuesta.value.trim() === "2-3-1") {
+  if (codigoRespuesta.value.trim() === "4-1-3-2") {
     codigoDiv.style.display = "none";
     vfDiv.style.display = "block";
   } else {
@@ -261,7 +264,7 @@ function verificarCodigo() {
 
 // VERDADERO / FALSO
 function verificarVF() {
-  if (vf1.value === "V" && vf2.value === "V" && vf3.value === "F") {
+  if (vf1.value === "F" && vf2.value === "V" && vf3.value === "F" && vf4.value === "F") {
     vfDiv.style.display = "none";
     retosDiv.style.display = "block";
   } else {
