@@ -57,7 +57,7 @@ img {
 
 <!-- LOGIN -->
 <div class="box" id="login">
-  <h2>🔐 Acceso secreto</h2>
+  <h2>🔐 Acceso secretRRRRRRRRRRo</h2>
   <p>Pon la contraseña correcta</p>
   <p><em>Pista: Serie que finjiste verte para enamorar a este chico joven y guapo</em></p>
   <input type="password" id="password" placeholder="Contraseña">
