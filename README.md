@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -22,19 +21,23 @@ body {
   max-width: 420px;
   width: 100%;
 }
-input {
+input[type="text"], input[type="password"] {
   display: block;
   padding: 10px;
   width: 80%;
   margin: 8px auto;
   font-size: 16px;
 }
+.checkbox {
+  text-align: left;
+  margin: 10px 0;
+}
 button {
   display: block;
   padding: 10px 20px;
   font-size: 16px;
-  margin: 15px auto 0;
   cursor: pointer;
+  margin: 15px auto 0 auto;
 }
 .error {
   color: red;
@@ -42,10 +45,6 @@ button {
 }
 .contenido {
   display: none;
-}
-.checkbox {
-  text-align: left;
-  margin: 10px 0;
 }
 img {
   width: 100%;
@@ -59,24 +58,34 @@ img {
 <!-- LOGIN -->
 <div class="box" id="login">
   <h2>🔐 Acceso secreto</h2>
+  <p>Pon la contraseña correcta</p>
+  <p><em>Pista: Serie que finjiste verte para enamorar a este chico joven y guapo</em></p>
   <input type="password" id="password" placeholder="Contraseña">
+  <br>
   <button onclick="comprobar()">Entrar</button>
   <p class="error" id="error">❌ Contraseña incorrecta</p>
 </div>
 
 <!-- PREGUNTAS -->
 <div class="box contenido" id="preguntas">
-  <p>¿Dónde fue nuestro primer beso?</p><input id="p1">
-  <p>¿Fecha que empezamos a salir?</p><input id="p2">
-  <p>Mejor jugador de pádel del mundo</p><input id="p3">
-  <p>Mi peli favorita</p><input id="p4">
-  <p>Primer viaje juntos</p><input id="p5">
+  <h2>🧩 Primera prueba</h2>
+  <p>1️⃣ ¿Dónde fue nuestro primer beso?</p>
+  <input id="p1">
+  <p>2️⃣ ¿En qué fecha empezamos a salir?</p>
+  <input id="p2">
+  <p>3️⃣ ¿Caul es el nombre del mejor jugador de pádel del mundo?</p>
+  <input id="p3">
+  <p>4️⃣ ¿Mi película favorita?</p>
+  <input id="p4">
+  <p>5️⃣ ¿Nuestro primer viaje juntos?</p>
+  <input id="p5">
   <button onclick="verificarPreguntas()">Comprobar</button>
   <p class="error" id="errorPreguntas">❌ Has fallado alguna</p>
 </div>
 
 <!-- CANCIÓN -->
 <div class="box contenido" id="cancion">
+  <h2>🎶 Prueba musical</h2>
   <audio controls>
     <source src="cancion.mp3" type="audio/mpeg">
   </audio>
@@ -85,7 +94,6 @@ img {
   <button onclick="verificarCancion()">Responder</button>
   <p class="error" id="errorCancion">❌ No es esa</p>
 </div>
-
 <!-- CÓDIGO DEL AMOR -->
 <div class="box contenido" id="codigoAmor">
   <h2>🗝️ Código del amor</h2>
@@ -112,96 +120,137 @@ img {
   <button onclick="verificarVF()">Comprobar</button>
   <p class="error" id="errorVF">❌ Alguna no es correcta</p>
 </div>
-
-<!-- RETOS -->
+<!-- RETOS CHECKBOX -->
 <div class="box contenido" id="retos">
-  <div class="checkbox"><label><input type="checkbox" id="r1"> Darme de comer</label></div>
-  <div class="checkbox"><label><input type="checkbox" id="r2"> Beso con sentimiento</label></div>
-  <div class="checkbox"><label><input type="checkbox" id="r3"> 5 flexiones</label></div>
+  <h2>✅ Última prueba</h2>
+  <p>Completa TODOS los retos:</p>
+  <div class="checkbox">
+    <label><input type="checkbox" id="r1"> Darle algo de comer a tu querido novio</label>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" id="r2"> Darle un beso (con sentimiento) a todas las personas de la sala</label>
+  </div>
+  <div class="checkbox">
+    <label><input type="checkbox" id="r3"> Hacer 5 flexiones</label>
+  </div>
   <button onclick="verificarRetos()">Hecho</button>
-  <p class="error" id="errorRetos">❌ Faltan retos</p>
+  <p class="error" id="errorRetos">❌ Faltan retos por cumplir</p>
 </div>
 
-<!-- ELECCIÓN -->
+<!-- ELECCIÓN DEL REGALO -->
 <div class="box contenido" id="eleccion">
-  <button onclick="fallo(1)">🎁 1</button>
-  <button onclick="fallo(2)">🎁 2</button>
-  <button onclick="acierto()">🎁 3</button>
+  <h2>🎁 Elige tu regalo</h2>
+  <p>Solo uno es el correcto… elige sabiamente 😏</p>
+  <button onclick="fallo(1)">🎁 Regalo 1</button>
+  <button onclick="fallo(2)">🎁 Regalo 2</button>
+  <button onclick="fallo(3)">🎁 Regalo 3</button>
+  <button onclick="fallo(4)">🎁 Regalo 4</button>
+  <button onclick="fallo(5)">🎁 Regalo 5</button>
+  <button onclick="fallo(6)">🎁 Regalo 6</button>
+  <button onclick="acierto()">🎁 Regalo 7</button>
+  <button onclick="fallo(8)">🎁 Regalo 8</button>
 </div>
 
-<!-- FALLO -->
+<!-- RESULTADO FALLOS -->
 <div class="box contenido" id="fallo">
+  <h2>❌ Casi…</h2>
   <img id="fotoFallo">
   <p id="mensajeFallo"></p>
-  <button onclick="volverIntentar()">Volver</button>
+  <button onclick="volverIntentar()">Volver a intentar</button>
 </div>
 
-<!-- ACIERTO -->
+<!-- RESULTADO ACIERTO -->
 <div class="box contenido" id="acierto">
-  <h2>🎉 ¡Has ganado!</h2>
-  <p>RESERVA ESA FECHA 💕</p>
+  <h2>🎉 ¡Has acertado!</h2>
+  <img src="acierto.jpg">
+  <p>Tu regalo es… <strong>RESERVA ESA FECHA, QUE NOS VAMOS A VER AL JUAN DAVILA</strong></p>
 </div>
 
 <script>
 const CLAVE = "rickymorty";
 
-function comprobar(){
+// Elementos
+const loginDiv = document.getElementById("login");
+const preguntasDiv = document.getElementById("preguntas");
+const cancionDiv = document.getElementById("cancion");
+const retosDiv = document.getElementById("retos");
+const eleccionDiv = document.getElementById("eleccion");
+const falloDiv = document.getElementById("fallo");
+const aciertoDiv = document.getElementById("acierto");
+const fotoFallo = document.getElementById("fotoFallo");
+const mensajeFallo = document.getElementById("mensajeFallo");
+const password = document.getElementById("password");
+const p1 = document.getElementById("p1");
+const p2 = document.getElementById("p2");
+const p3 = document.getElementById("p3");
+const p4 = document.getElementById("p4");
+const p5 = document.getElementById("p5");
+const respuestaCancion = document.getElementById("respuestaCancion");
+const r1 = document.getElementById("r1");
+const r2 = document.getElementById("r2");
+const r3 = document.getElementById("r3");
+const error = document.getElementById("error");
+const errorPreguntas = document.getElementById("errorPreguntas");
+const errorCancion = document.getElementById("errorCancion");
+const errorRetos = document.getElementById("errorRetos");
+
+// Funciones
+function comprobar() {
   if(password.value === CLAVE){
-    login.style.display="none";
-    preguntas.style.display="block";
-  } else error.style.display="block";
+    loginDiv.style.display = "none";
+    preguntasDiv.style.display = "block";
+  } else {
+    error.style.display = "block";
+  }
 }
 
 function verificarPreguntas(){
-  const ok=["olesa de bonesvalls","27/09/2019","pablo","regreso al futuro","canarias"];
-  const v=[p1,p2,p3,p4,p5].map(i=>i.value.toLowerCase().trim());
-  if(ok.every((r,i)=>r===v[i])){
-    preguntas.style.display="none";
-    cancion.style.display="block";
-  } else errorPreguntas.style.display="block";
+  const respuestas = ["olesa de bonesvalls","27/09/2019","pablo","regreso al futuro","canarias"];
+  const inputs = [p1,p2,p3,p4,p5].map(i => i.value.toLowerCase().trim());
+  for(let i=0;i<respuestas.length;i++){
+    if(inputs[i] !== respuestas[i]){
+      errorPreguntas.style.display = "block";
+      return;
+    }
+  }
+  preguntasDiv.style.display = "none";
+  cancionDiv.style.display = "block";
 }
 
 function verificarCancion(){
-  if(respuestaCancion.value.toLowerCase()==="malaikah"){
-    cancion.style.display="none";
-    codigoAmor.style.display="block";
-  } else errorCancion.style.display="block";
-}
-
-function verificarCodigo(){
-  if(codigoRespuesta.value.trim()==="2-3-1"){
-    codigoAmor.style.display="none";
-    vf.style.display="block";
-  } else errorCodigo.style.display="block";
-}
-
-function verificarVF(){
-  if(vf1.value==="V" && vf2.value==="F" && vf3.value==="V"){
-    vf.style.display="none";
-    retos.style.display="block";
-  } else errorVF.style.display="block";
+  if(respuestaCancion.value.toLowerCase().trim() === "malaikah"){
+    cancionDiv.style.display = "none";
+    retosDiv.style.display = "block";
+  } else {
+    errorCancion.style.display = "block";
+  }
 }
 
 function verificarRetos(){
-  if(r1.checked&&r2.checked&&r3.checked){
-    retos.style.display="none";
-    eleccion.style.display="block";
-  } else errorRetos.style.display="block";
+  if(r1.checked && r2.checked && r3.checked){
+    retosDiv.style.display = "none";
+    eleccionDiv.style.display = "block";
+  } else {
+    errorRetos.style.display = "block";
+  }
 }
 
-function fallo(n){
-  eleccion.style.display="none";
-  fallo.style.display="block";
-  fotoFallo.src=`fallo${n}.jpg`;
-  mensajeFallo.textContent="No era ese 😏";
+// Elección regalo
+function fallo(num){
+  eleccionDiv.style.display = "none";
+  falloDiv.style.display = "block";
+  fotoFallo.src = fallo${num}.jpg;
+  mensajeFallo.textContent = No es ese… pero vaya dos pivones💕;
 }
+
 function acierto(){
-  eleccion.style.display="none";
-  acierto.style.display="block";
+  eleccionDiv.style.display = "none";
+  aciertoDiv.style.display = "block";
 }
+
 function volverIntentar(){
-  fallo.style.display="none";
-  eleccion.style.display="block";
+  falloDiv.style.display = "none";
+  eleccionDiv.style.display = "block";
 }
 </script>
 </body>
