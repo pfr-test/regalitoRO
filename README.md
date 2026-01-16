@@ -173,30 +173,44 @@ const CLAVE = "rickymorty";
 const loginDiv = document.getElementById("login");
 const preguntasDiv = document.getElementById("preguntas");
 const cancionDiv = document.getElementById("cancion");
+const codigoDiv = document.getElementById("codigoAmor");
+const vfDiv = document.getElementById("vf");
 const retosDiv = document.getElementById("retos");
 const eleccionDiv = document.getElementById("eleccion");
 const falloDiv = document.getElementById("fallo");
 const aciertoDiv = document.getElementById("acierto");
+
 const fotoFallo = document.getElementById("fotoFallo");
 const mensajeFallo = document.getElementById("mensajeFallo");
+
 const password = document.getElementById("password");
 const p1 = document.getElementById("p1");
 const p2 = document.getElementById("p2");
 const p3 = document.getElementById("p3");
 const p4 = document.getElementById("p4");
 const p5 = document.getElementById("p5");
+
 const respuestaCancion = document.getElementById("respuestaCancion");
+const codigoRespuesta = document.getElementById("codigoRespuesta");
+
+const vf1 = document.getElementById("vf1");
+const vf2 = document.getElementById("vf2");
+const vf3 = document.getElementById("vf3");
+
 const r1 = document.getElementById("r1");
 const r2 = document.getElementById("r2");
 const r3 = document.getElementById("r3");
+
 const error = document.getElementById("error");
 const errorPreguntas = document.getElementById("errorPreguntas");
 const errorCancion = document.getElementById("errorCancion");
+const errorCodigo = document.getElementById("errorCodigo");
+const errorVF = document.getElementById("errorVF");
 const errorRetos = document.getElementById("errorRetos");
 
-// Funciones
+// LOGIN
 function comprobar() {
-  if(password.value === CLAVE){
+  if (password.value === CLAVE) {
     loginDiv.style.display = "none";
     preguntasDiv.style.display = "block";
   } else {
@@ -204,11 +218,19 @@ function comprobar() {
   }
 }
 
-function verificarPreguntas(){
-  const respuestas = ["olesa de bonesvalls","27/09/2019","pablo","regreso al futuro","canarias"];
+// PREGUNTAS
+function verificarPreguntas() {
+  const respuestas = [
+    "olesa de bonesvalls",
+    "27/09/2019",
+    "pablo",
+    "regreso al futuro",
+    "canarias"
+  ];
   const inputs = [p1,p2,p3,p4,p5].map(i => i.value.toLowerCase().trim());
-  for(let i=0;i<respuestas.length;i++){
-    if(inputs[i] !== respuestas[i]){
+
+  for (let i = 0; i < respuestas.length; i++) {
+    if (inputs[i] !== respuestas[i]) {
       errorPreguntas.style.display = "block";
       return;
     }
@@ -217,17 +239,39 @@ function verificarPreguntas(){
   cancionDiv.style.display = "block";
 }
 
-function verificarCancion(){
-  if(respuestaCancion.value.toLowerCase().trim() === "malaikah"){
+// CANCIÓN
+function verificarCancion() {
+  if (respuestaCancion.value.toLowerCase().trim() === "malaikah") {
     cancionDiv.style.display = "none";
-    retosDiv.style.display = "block";
+    codigoDiv.style.display = "block";
   } else {
     errorCancion.style.display = "block";
   }
 }
 
-function verificarRetos(){
-  if(r1.checked && r2.checked && r3.checked){
+// CÓDIGO DEL AMOR
+function verificarCodigo() {
+  if (codigoRespuesta.value.trim() === "2-3-1") {
+    codigoDiv.style.display = "none";
+    vfDiv.style.display = "block";
+  } else {
+    errorCodigo.style.display = "block";
+  }
+}
+
+// VERDADERO / FALSO
+function verificarVF() {
+  if (vf1.value === "V" && vf2.value === "V" && vf3.value === "F") {
+    vfDiv.style.display = "none";
+    retosDiv.style.display = "block";
+  } else {
+    errorVF.style.display = "block";
+  }
+}
+
+// RETOS
+function verificarRetos() {
+  if (r1.checked && r2.checked && r3.checked) {
     retosDiv.style.display = "none";
     eleccionDiv.style.display = "block";
   } else {
@@ -235,20 +279,20 @@ function verificarRetos(){
   }
 }
 
-// Elección regalo
-function fallo(num){
+// REGALOS
+function fallo(num) {
   eleccionDiv.style.display = "none";
   falloDiv.style.display = "block";
-  fotoFallo.src = fallo${num}.jpg;
-  mensajeFallo.textContent = No es ese… pero vaya dos pivones💕;
+  fotoFallo.src = `fallo${num}.jpg`;
+  mensajeFallo.textContent = "No es ese… pero vaya dos pivones 💕";
 }
 
-function acierto(){
+function acierto() {
   eleccionDiv.style.display = "none";
   aciertoDiv.style.display = "block";
 }
 
-function volverIntentar(){
+function volverIntentar() {
   falloDiv.style.display = "none";
   eleccionDiv.style.display = "block";
 }
