@@ -74,7 +74,7 @@ img {
   <input id="p1">
   <p>2️⃣ ¿En qué fecha empezamos a salir?</p>
   <input id="p2">
-  <p>3️⃣ ¿Quién es el mejor jugador de pádel del mundo?</p>
+  <p>3️⃣ ¿Caul es el nombre del mejor jugador de pádel del mundo?</p>
   <input id="p3">
   <p>4️⃣ ¿Mi película favorita?</p>
   <input id="p4">
